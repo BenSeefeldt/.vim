@@ -1,0 +1,7 @@
+A place to keep track of all of my vim configuration
+files.
+
+In order to use, clone from this repository into home dir
+and create link
+
+ln -s ~/.vim/vimrc ~/.vimrc
