@@ -32,6 +32,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Coolest thing. Fixes odd completion behavior.
 set wildmenu
 set wildmode=longest:full
+set wildignore+=*.exe,*.pyc,*.o,*.class
 
 " 'Smash' Escape
 imap jk <ESC>
