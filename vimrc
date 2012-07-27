@@ -33,19 +33,23 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 set wildmenu
 set wildmode=longest:full
 set wildignore+=*.exe,*.pyc,*.o,*.class
+"
+" Custom Leader
+let mapleader = ","
 
 " 'Smash' Escape
 imap jk <ESC>
 imap kj <ESC>
-nnoremap ; :
 
+
+nnoremap ; :
+" noremap ;; ;
+nnoremap : ;
+" vnoremap ; :
+" vnoremap : ;
 
 " Movement between buffers
-nmap ,n :bnext <CR>
-nmap ,b :bprevious <CR>
 
-" Custom Leader
-let mapleader = ","
 
 " I forget what this does.
 set ls=2
@@ -53,7 +57,7 @@ set ls=2
 " Keeping it in here. This is helpful for windows
 " One looks better, one handles more characters
 " nnoremap <leader>g :set guifont=Consolas:h12 <CR>
-set guifont=Droid\ Sans\ Mono\ 10.5 
+" set guifont=Droid\ Sans\ Mono\ 10.5 
 
 " Interesting setting. Set it high to keep 
 " the cursor in the middle of the screen.
@@ -61,9 +65,13 @@ set guifont=Droid\ Sans\ Mono\ 10.5
 
 
 " Some leader mappings to speed things up.
-map <leader>m :update<CR>:make!<CR> " If you've go make handy
-map <leader>/ :nohl<CR> " This is upper nice 
+map <leader>m ;update<CR>;make!<CR> 
+" If you've go make handy
+map <leader>/ ;nohl<CR> 
+" This is upper nice 
 " Resizing splits
+nmap <leader>n ;bnext <CR>
+nmap <leader>b ;bprevious <CR>
 nmap <leader>h <C-w>10>
 nmap <leader>l <C-w>10<
 nmap <leader>j <C-w>10-
@@ -72,7 +80,6 @@ nmap <leader>k <C-w>10+
 imap <C-s> <ESC>:w<CR>
 " Helpful for C++ and Java
 imap <C-l> <END>
-imap <C-;> <END>;
 map <C-s> :w<CR>
 " To use the system clipboard
 map <leader>p "+p
