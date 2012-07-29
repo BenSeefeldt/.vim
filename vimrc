@@ -24,6 +24,7 @@ syntax on
 " Color Options
 " colors wombat256mod
 colors wombat 
+" colors desert
 
 " Fixes Auto Complete
 set ofu=syntaxcomplete#Complete

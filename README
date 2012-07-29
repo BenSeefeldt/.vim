@@ -12,3 +12,11 @@ problems with CSApprox, which serves to modify the gui
 only theme I'm using so that a terminal can use it.
 This shouldn't be a problem, it just might lead to some
 weird colors.
+
+A fix for that problem. If you're going to run in a
+terminal only application, switch colorscheme from
+wombat to desert, and switch 
+plugins/CSApprox.vim to plugins/CSApprox.disable.
+
+Switch back in a normal environment. Always commit
+with a .vim suffix.
