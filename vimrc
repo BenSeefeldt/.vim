@@ -58,7 +58,7 @@ set ls=2
 " Keeping it in here. This is helpful for windows
 " One looks better, one handles more characters
 " nnoremap <leader>g :set guifont=Consolas:h12 <CR>
-" set guifont=Droid\ Sans\ Mono\ 10.5 
+set guifont=Droid\ Sans\ Mono\ 10
 
 " Interesting setting. Set it high to keep 
 " the cursor in the middle of the screen.
