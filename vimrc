@@ -77,6 +77,8 @@ nmap <leader>h <C-w>10>
 nmap <leader>l <C-w>10<
 nmap <leader>j <C-w>10-
 nmap <leader>k <C-w>10+
+" Insert newline at cursor.
+nnoremap K i<CR><Esc>k$
 " Quick Save
 imap <C-s> <ESC>:w<CR>
 " Helpful for C++ and Java
