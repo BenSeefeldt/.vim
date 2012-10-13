@@ -15,6 +15,7 @@ set nocp
 set t_Co=256
 set shortmess=I
 set fml=0
+set mouse=a
 filetype plugin on
 
 " Highlight search optioins
@@ -58,7 +59,8 @@ set ls=2
 " Keeping it in here. This is helpful for windows
 " One looks better, one handles more characters
 " nnoremap <leader>g :set guifont=Consolas:h12 <CR>
-set guifont=Droid\ Sans\ Mono\ 10
+" set guifont=Droid\ Sans\ Mono\ 10
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
 
 " Interesting setting. Set it high to keep 
 " the cursor in the middle of the screen.
