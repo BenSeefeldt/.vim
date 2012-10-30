@@ -32,6 +32,8 @@ URxvt*color15: #eeeeee
 ! XTerm*faceName: Droid Sans Mono:pixelsize=13
 ! fave XTerm*faceName: Deja Vu Sans Mono:pixelsize=13
 XTerm*faceName: xft:DejaVu Sans Mono for Powerline:regular:pixelsize=13
+! URxvt*font:-Misc-Stlarch-Medium-R-Normal--10-100-75-75-C-80-ISO10646-1
+
 URxvt*font: xft:DejaVu Sans Mono for Powerline:regular:pixelsize=13
 URxvt.scrollBar: false
 

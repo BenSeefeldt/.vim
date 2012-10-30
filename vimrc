@@ -1,5 +1,6 @@
 " General Settings
 set nocompatible
+set exrc
 set directory=.,$TEMP
 set number
 set nowrap
