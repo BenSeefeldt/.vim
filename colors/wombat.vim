@@ -35,7 +35,7 @@ hi Visual		guifg=#f6f3e8 guibg=#444444 gui=none
 hi SpecialKey	guifg=#808080 guibg=#343434 gui=none
 
 " Syntax highlighting
-hi Comment 		guifg=#99968b gui=italic
+hi Comment 		guifg=#99968b gui=italic term=italic cterm=italic
 hi Todo 		guifg=#8f8f8f gui=italic
 hi Constant 	guifg=#e5786d gui=none
 hi String 		guifg=#95e454 gui=italic

@@ -25,7 +25,9 @@ syntax on
 
 " Color Options
 " colors wombat256mod
-colors wombat 
+" colors customwombat
+colors newwombat
+" colors wombat 
 " colors desert
 
 " Fixes Auto Complete
@@ -61,7 +63,7 @@ set ls=2
 " One looks better, one handles more characters
 " nnoremap <leader>g :set guifont=Consolas:h12 <CR>
 " set guifont=Droid\ Sans\ Mono\ 10
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
 
 " Interesting setting. Set it high to keep 
 " the cursor in the middle of the screen.
