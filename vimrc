@@ -18,7 +18,7 @@ set shortmess=I
 set fml=0
 set mouse=a
 filetype plugin on
-
+let g:Powerline_symbols = 'fancy'
 " Highlight search optioins
 set hlsearch
 syntax on
@@ -115,6 +115,7 @@ nmap <C-l> <C-w>l
 
 set backspace=2
 set tw=0
+set cc=81
 
 " Incremental search
 set incsearch
