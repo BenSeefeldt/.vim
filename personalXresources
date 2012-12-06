@@ -1,0 +1,56 @@
+URxvt*background: #242424
+URxvt*foreground: #f6f3e8
+!black
+!not taken care of yet
+URxvt*color0: #000000 
+URxvt*color8: #555544
+!red
+URxvt*color1: #e5786d 
+URxvt*color9: #f5988d 
+!*color9: #f57900
+!green
+URxvt*color2: #004500
+URxvt*color10: #cae682 
+!brown/yellow
+URxvt*color3: #cd5807 
+URxvt*color11: #FFC135
+!*color11: #FFFFFF
+!blue
+URxvt*color4: #8ac6f2 
+URxvt*color12: #9ad6ff
+!magenta
+URxvt*color5: #8b63d8 
+URxvt*color13: #ad7fa8
+!cyan
+URxvt*color6: #81dfbf 
+URxvt*color14: #99916A
+!white/yello
+URxvt*color7: #ffffff 
+!*color15: #b6b8b9
+URxvt*color15: #eeeeee
+
+! XTerm*faceName: Droid Sans Mono:pixelsize=13
+! fave XTerm*faceName: Deja Vu Sans Mono:pixelsize=13
+XTerm*faceName: xft:DejaVu Sans Mono for Powerline:regular:pixelsize=13
+! URxvt*font:-Misc-Stlarch-Medium-R-Normal--10-100-75-75-C-80-ISO10646-1
+
+URxvt*font: xft:DejaVu Sans Mono for Powerline:regular:pixelsize=13
+URxvt*boldFont:             xft:DejaVu Sans Mono for Powerline:bold:size=13
+URxvt*italicFont:           xft:DejaVu Sans Mono for Powerline:italic:size=13
+URxvt*boldItalicFont:       xft:DejaVu Sans Mono for Powerline:bold:italic:size=13
+
+URxvt.scrollBar: false
+
+urxvt.letterSpace: -1
+
+
+
+! XTerm*faceName: Inconsolata:pixelsize=15
+! XTerm*faceName:  xft:Monaco for Pojerline:regular:size=8
+Xft.antialias:              true
+Xft.dpi:                    86
+! Xft.dpi:                    96
+! Xft.dpi:                    111
+Xft.rgba:                   rgb
+Xt.hinting:                true
+Xft.hintstyle:              hintslight
