@@ -41,6 +41,10 @@ URxvt*boldItalicFont:       xft:DejaVu Sans Mono for Powerline:bold:italic:size=
 
 URxvt.scrollBar: false
 
+! URxvt*scrollTtyOutput:      false
+! URxvt*scrollWithBuffer:     false
+! URxvt*scrollTtyKeypress:    true
+
 urxvt.letterSpace: -1
 
 
