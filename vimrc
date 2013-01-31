@@ -22,7 +22,9 @@ let g:Powerline_symbols = 'fancy'
 " Highlight search optioins
 set hlsearch
 syntax on
-
+" Latex Conceal Stuff
+let g:tex_conceal="adgm"
+set cole=2
 " Color Options
 " colors wombat256mod
 " colors customwombat

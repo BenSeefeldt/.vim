@@ -17,6 +17,7 @@ endif
 if 0
 elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^screen") && exists("g:CSApprox_konsole") && g:CSApprox_konsole) || &term =~? "^konsole"
     CSAHi Normal term=NONE ctermbg=235 ctermfg=231 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE
+    CSAHi Conceal term=NONE ctermbg=235 ctermfg=231 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE
     CSAHi Statement term=bold ctermbg=bg ctermfg=153 gui=NONE guibg=bg guifg=#8ac6f2 cterm=NONE  
     CSAHi PreProc term=underline ctermbg=bg ctermfg=174 gui=NONE guibg=bg guifg=#e5786d cterm=NONE 
     CSAHi Type term=underline ctermbg=bg ctermfg=193 gui=NONE guibg=bg guifg=#cae682 cterm=NONE 
@@ -83,11 +84,11 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi DiffDelete term=bold ctermbg=37 ctermfg=21 gui=bold guibg=#008b8b guifg=#0000ff cterm=bold 
     CSAHi DiffText term=reverse ctermbg=196 ctermfg=fg gui=bold guibg=#ff0000 guifg=fg cterm=bold 
     CSAHi SignColumn term=NONE ctermbg=250 ctermfg=51 gui=NONE guibg=#bebebe guifg=#00ffff cterm=NONE 
-    CSAHi Conceal term=NONE ctermbg=248 ctermfg=252 gui=NONE guibg=#a9a9a9 guifg=#d3d3d3 cterm=NONE 
     CSAHi SpellBad term=reverse ctermbg=bg ctermfg=196 gui=undercurl guibg=bg guifg=fg guisp=#ff0000 cterm=undercurl 
     CSAHi SpellCap term=reverse ctermbg=bg ctermfg=21 gui=undercurl guibg=bg guifg=fg guisp=#0000ff cterm=undercurl 
 elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^screen") && exists("g:CSApprox_eterm") && g:CSApprox_eterm) || &term =~? "^eterm"
     CSAHi Normal term=NONE ctermbg=235 ctermfg=231 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE 
+    CSAHi Conceal term=NONE ctermbg=235 ctermfg=231 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE 
     CSAHi Statement term=bold ctermbg=bg ctermfg=159 gui=NONE guibg=bg guifg=#8ac6f2 cterm=NONE 
     CSAHi PreProc term=underline ctermbg=bg ctermfg=217 gui=NONE guibg=bg guifg=#e5786d cterm=NONE 
     CSAHi Type term=underline ctermbg=bg ctermfg=229 gui=NONE guibg=bg guifg=#cae682 cterm=NONE 
@@ -154,11 +155,11 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi DiffDelete term=bold ctermbg=37 ctermfg=21 gui=bold guibg=#008b8b guifg=#0000ff cterm=bold 
     CSAHi DiffText term=reverse ctermbg=196 ctermfg=fg gui=bold guibg=#ff0000 guifg=fg cterm=bold 
     CSAHi SignColumn term=NONE ctermbg=250 ctermfg=51 gui=NONE guibg=#bebebe guifg=#00ffff cterm=NONE 
-    CSAHi Conceal term=NONE ctermbg=248 ctermfg=231 gui=NONE guibg=#a9a9a9 guifg=#d3d3d3 cterm=NONE 
     CSAHi SpellBad term=reverse ctermbg=bg ctermfg=196 gui=undercurl guibg=bg guifg=fg guisp=#ff0000 cterm=undercurl 
     CSAHi SpellCap term=reverse ctermbg=bg ctermfg=21 gui=undercurl guibg=bg guifg=fg guisp=#0000ff cterm=undercurl 
 elseif has("gui_running") || &t_Co == 256
     CSAHi Normal term=NONE ctermbg=235 ctermfg=230 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE 
+    CSAHi Conceal term=NONE ctermbg=235 ctermfg=230 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE 
     CSAHi Statement term=bold ctermbg=bg ctermfg=117 gui=NONE guibg=bg guifg=#8ac6f2 cterm=NONE 
     CSAHi PreProc term=underline ctermbg=bg ctermfg=173 gui=NONE guibg=bg guifg=#e5786d cterm=NONE 
     CSAHi Type term=underline ctermbg=bg ctermfg=186 gui=NONE guibg=bg guifg=#cae682 cterm=NONE 
@@ -225,11 +226,11 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi DiffDelete term=bold ctermbg=30 ctermfg=21 gui=bold guibg=#008b8b guifg=#0000ff cterm=bold 
     CSAHi DiffText term=reverse ctermbg=196 ctermfg=fg gui=bold guibg=#ff0000 guifg=fg cterm=bold 
     CSAHi SignColumn term=NONE ctermbg=250 ctermfg=51 gui=NONE guibg=#bebebe guifg=#00ffff cterm=NONE 
-    CSAHi Conceal term=NONE ctermbg=248 ctermfg=252 gui=NONE guibg=#a9a9a9 guifg=#d3d3d3 cterm=NONE 
     CSAHi SpellBad term=reverse ctermbg=bg ctermfg=196 gui=undercurl guibg=bg guifg=fg guisp=#ff0000 cterm=undercurl 
     CSAHi SpellCap term=reverse ctermbg=bg ctermfg=21 gui=undercurl guibg=bg guifg=fg guisp=#0000ff cterm=undercurl 
 elseif has("gui_running") || &t_Co == 88
     CSAHi Normal term=NONE ctermbg=80 ctermfg=79 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE 
+    CSAHi Conceal term=NONE ctermbg=80 ctermfg=79 gui=NONE guibg=#242424 guifg=#f6f3e8 cterm=NONE 
     CSAHi Statement term=bold ctermbg=bg ctermfg=43 gui=NONE guibg=bg guifg=#8ac6f2 cterm=NONE 
     CSAHi PreProc term=underline ctermbg=bg ctermfg=53 gui=NONE guibg=bg guifg=#e5786d cterm=NONE 
     CSAHi Type term=underline ctermbg=bg ctermfg=57 gui=NONE guibg=bg guifg=#cae682 cterm=NONE 
@@ -296,7 +297,6 @@ elseif has("gui_running") || &t_Co == 88
     CSAHi DiffDelete term=bold ctermbg=21 ctermfg=19 gui=bold guibg=#008b8b guifg=#0000ff cterm=bold 
     CSAHi DiffText term=reverse ctermbg=64 ctermfg=fg gui=bold guibg=#ff0000 guifg=fg cterm=bold 
     CSAHi SignColumn term=NONE ctermbg=85 ctermfg=31 gui=NONE guibg=#bebebe guifg=#00ffff cterm=NONE 
-    CSAHi Conceal term=NONE ctermbg=84 ctermfg=86 gui=NONE guibg=#a9a9a9 guifg=#d3d3d3 cterm=NONE 
     CSAHi SpellBad term=reverse ctermbg=bg ctermfg=64 gui=undercurl guibg=bg guifg=fg guisp=#ff0000 cterm=undercurl 
     CSAHi SpellCap term=reverse ctermbg=bg ctermfg=19 gui=undercurl guibg=bg guifg=fg guisp=#0000ff cterm=undercurl 
 endif
