@@ -19,6 +19,9 @@ set fml=0
 set mouse=a
 filetype plugin on
 let g:Powerline_symbols = 'fancy'
+" let g:EasyMotion_leader_key = '<Space>'
+let g:EasyMotion_mapping_w = '<Space>'
+let g:EasyMotion_mapping_b = '<leader><Space>'
 " Highlight search optioins
 set hlsearch
 syntax on
