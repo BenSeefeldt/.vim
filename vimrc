@@ -26,8 +26,8 @@ let g:EasyMotion_mapping_b = '<leader><Space>'
 set hlsearch
 syntax on
 " Latex Conceal Stuff
-let g:tex_conceal="adgm"
-set cole=2
+" let g:tex_conceal="adgm"
+set cole=0
 " Color Options
 " colors wombat256mod
 " colors customwombat
