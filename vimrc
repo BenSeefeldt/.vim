@@ -48,8 +48,10 @@ set wildignore+=*.exe,*.pyc,*.o,*.class
 let mapleader = ","
 
 " 'Smash' Escape
-imap jk <ESC>
-imap kj <ESC>
+imap jk <ESC>jk
+imap kj <ESC>jk
+imap df <ESC>jk
+imap fd <ESC>jk
 
 
 nnoremap ; :
@@ -78,7 +80,7 @@ set ls=2
 " Some leader mappings to speed things up.
 map <leader>m ;update<CR>;make!<CR> 
 " If you've go make handy
-map <leader>/ ;nohl<CR> 
+map <leader>/ ;nohl<CR><ESC>
 " This is upper nice 
 " Resizing splits
 nmap <leader>n ;bnext <CR>
