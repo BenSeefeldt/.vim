@@ -50,8 +50,6 @@ let mapleader = ","
 " 'Smash' Escape
 imap jk <ESC>jk
 imap kj <ESC>jk
-imap df <ESC>jk
-imap fd <ESC>jk
 
 
 nnoremap ; :
