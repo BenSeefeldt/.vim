@@ -1,107 +1,150 @@
-" General Settings
+" ==============================================================================
+"                                Vundle Options
+" ==============================================================================
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Required! 
+Bundle 'gmarik/vundle'
+
+" UI
+Bundle 'w0ng/vim-hybrid'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'mhinz/vim-startify'
+
+" Syntax
+Bundle 'Raimondi/delimitMate'
+
+" Files
+Bundle 'kien/ctrlp.vim'
+
+" Buffers
+Bundle 'troydm/easybuffer.vim'
+
+" Text Manipulation
+Bundle 'godlygeek/tabular'
+Bundle 'nelstrom/vim-markdown-folding'
+Bundle 'tpope/vim-surround'
+
+" Required by Vundle.
+filetype plugin indent on
+
+
+" ==============================================================================
+"                           Various Settings
+" ==============================================================================
 set exrc
-set directory=.,$TEMP
+let mapleader = ","
+
+" Mouse always goes on
+set mouse=a
+
+" Turn on line numbering
 set number
+
+" Turn off line wrapping
 set nowrap
-set expandtab
-set shiftwidth=2
-set softtabstop=2
+
+" Allows you to move to a different buffer without saving
+set hidden
+
+" Code Folding
 set foldmethod=syntax
 set nofoldenable
-set foldlevel=1
-set hidden
-set autoindent
-set nocp
-set t_Co=256
-set shortmess=I
 set fml=0
-set mouse=a
-filetype plugin on
-let g:Powerline_symbols = 'fancy'
-" let g:EasyMotion_leader_key = '<Space>'
-let g:EasyMotion_mapping_w = '<Space>'
-let g:EasyMotion_mapping_b = '<leader><Space>'
-" Highlight search optioins
-set hlsearch
-syntax on
-" Latex Conceal Stuff
-" let g:tex_conceal="adgm"
-set cole=0
-" Color Options
-" colors wombat256mod
-" colors customwombat
-colors newwombat
-" colors wombat 
-" colors desert
 
-" Fixes Auto Complete
-set ofu=syntaxcomplete#Complete
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Coolest thing. Fixes odd completion behavior.
+" Copies indent level from previous line
+set autoindent
+
+
+" Turn on syntax highlighting
+syntax on
+
+" Turn off intro message on vim
+set shortmess=I
+
+" Highlight search terms and clear
+set hlsearch
+set ignorecase
+
+" Auto complete stuff. To come.
+
+" Wildmenu for completion. TODO. This could be better?
 set wildmenu
-set wildmode=longest:full
+set wildmode=longest
 set wildignore+=*.exe,*.pyc,*.o,*.class
-"
-" Custom Leader
-let mapleader = ","
 
 " 'Smash' Escape
 imap jk <ESC>jk
 imap kj <ESC>jk
 
-
+" Allows you to not use shift.
 nnoremap ; :
-" noremap ;; ;
 nnoremap : ;
-" vnoremap ; :
-" vnoremap : ;
 
-" Movement between buffers
-
-
-" I forget what this does.
+" Always shows statusline
 set ls=2
 
-" Keeping it in here. This is helpful for windows
-" One looks better, one handles more characters
-" nnoremap <leader>g :set guifont=Consolas:h12 <CR>
-" set guifont=Droid\ Sans\ Mono\ 10
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+" Use the tab character, but view it as 2 spaces
+set tabstop=2
+" >> and << do two columns.
+set shiftwidth=2
+" View whitespace
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set list
 
-" Interesting setting. Set it high to keep 
-" the cursor in the middle of the screen.
-" set scrolloff=10
+" Show the begining of normal mode commands
+set sc
 
+" Autoloads changed fiels
+set ar
 
-" Some leader mappings to speed things up.
-map <leader>m ;update<CR>;make!<CR> 
-" If you've go make handy
+" Makes autocomplete only go to longest
+set ofu=syntaxcomplete#Complete
+set completeopt=longest,menuone
+" This seems to mess up the CR expand function of DelimitMate... I forget what
+" it's for.
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" ==============================================================================
+"                              Leader Keys
+" ==============================================================================
 map <leader>/ ;nohl<CR><ESC>
-" This is upper nice 
-" Resizing splits
+
 nmap <leader>n ;bnext <CR>
 nmap <leader>b ;bprevious <CR>
+
 nmap <leader>h <C-w>10>
 nmap <leader>l <C-w>10<
 nmap <leader>j <C-w>10-
 nmap <leader>k <C-w>10+
-" Insert newline at cursor.
-nnoremap K i<CR><Esc>k$
-" Quick Save
-imap <C-s> <ESC>:w<CR>
-" Helpful for C++ and Java
-imap <C-l> <END>
-map <C-s> :w<CR>
-" To use the system clipboard
+
+" System clipboard
 map <leader>p "+p
 map <leader>p "+P
 map <leader>y "+y
 map <leader>Y "+Y
 
+" EasyBuffer Invoke
+nmap <leader>v ;EasyBuffer<CR>
 
-" Necessary for a nice gvim look.
+" ==============================================================================
+"                               Mappings
+" ==============================================================================
+" Insert line at cursor.
+nnoremap K i<CR><Esc>k$
+
+" Allows me to navigate quickly between windows
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+
+" ==============================================================================
+"                              GUI Options
+" ==============================================================================
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -112,16 +155,34 @@ set guioptions-=LlRrb
 set go-=e "Uses non-gui tabs
 set ruler
 
-" Allows me to navigate quickly between windows
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
 
-set backspace=2
-set tw=0
-set cc=81
+" ==============================================================================
+"                                  Colors
+" ==============================================================================
+set background=dark " Set background
+set t_Co=256 " Use 256 colors
+let g:hybrid_use_Xresources=1
+colorscheme hybrid " Load a colorscheme
 
-" Incremental search
-set incsearch
-set ignorecase
+" ==============================================================================
+"                                Plugin Settings
+" ==============================================================================
+"
+" 
+" => Powerline
+let g:Powerline_colorscheme = 'solarized256'
+let g:Powerline_symbols = 'fancy'
+" Turns off extre insert below
+set nosmd
+
+" => DelimitMate
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
+let delimitMate_balance_matchpairs=1
+
+" => CtrlP
+" Set the working dir cor CtrlP to the current dir.
+let g:ctrlp_working_path_mode='c'
+
+" => EasyBuffer
+" See Leader Key Mappings
