@@ -115,6 +115,10 @@ set completeopt=longest,menuone
 " Sets the default browser for the 'gx' command.
 let g:netrw_browsex_viewer = "chromium"
 
+" Sets auto text width and color column
+set tw=80
+set cc=81
+
 " ==============================================================================
 "                              Leader Keys
 " ==============================================================================
