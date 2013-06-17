@@ -28,6 +28,10 @@ Bundle 'godlygeek/tabular'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'tpope/vim-surround'
 
+" Note Taking
+Bundle 'xolox/vim-notes'
+Bundle 'xolox/vim-misc'
+
 " Required by Vundle.
 filetype plugin indent on
 
@@ -108,6 +112,9 @@ set completeopt=longest,menuone
 " it's for.
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Sets the default browser for the 'gx' command.
+let g:netrw_browsex_viewer = "chromium"
+
 " ==============================================================================
 "                              Leader Keys
 " ==============================================================================
@@ -186,3 +193,8 @@ let g:ctrlp_working_path_mode='c'
 
 " => EasyBuffer
 " See Leader Key Mappings
+
+" vim-notes
+let g:notes_ruler_text='————————————————————————————————————————————————————————————————————————————————'
+let g:notes_directories = ['~/notes']
+
