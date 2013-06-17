@@ -77,7 +77,7 @@ set ignorecase
 
 " Wildmenu for completion. TODO. This could be better?
 set wildmenu
-set wildmode=longest
+set wildmode=longest:full,full
 set wildignore+=*.exe,*.pyc,*.o,*.class
 
 " 'Smash' Escape
