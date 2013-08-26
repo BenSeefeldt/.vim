@@ -31,6 +31,7 @@ Bundle 'tpope/vim-surround'
 " Note Taking
 Bundle 'xolox/vim-notes'
 Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-shell'
 
 " Required by Vundle.
 filetype plugin indent on
