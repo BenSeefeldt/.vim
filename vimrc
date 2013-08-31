@@ -202,4 +202,6 @@ let g:ctrlp_working_path_mode='c'
 " vim-notes
 let g:notes_ruler_text='————————————————————————————————————————————————————————————————————————————————'
 let g:notes_directories = ['~/notes']
+let g:notes_tab_indents = 0
+let g:notes_alt_indents = 0 
 
