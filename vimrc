@@ -11,8 +11,9 @@ Bundle 'gmarik/vundle'
 
 " UI
 Bundle 'w0ng/vim-hybrid'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'mhinz/vim-startify'
+" Bundle 'bling/vim-airline'
 
 " Syntax
 Bundle 'Raimondi/delimitMate'
@@ -48,6 +49,7 @@ set mouse=a
 
 " Turn on line numbering
 set number
+set relativenumber
 
 " Turn off line wrapping
 set nowrap
@@ -186,6 +188,10 @@ let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_symbols = 'fancy'
 " Turns off extre insert below
 set nosmd
+
+" => Airline
+" let g:airline_powerline_fonts=1
+" let g:airline#extensions#tabline#enabled = 1
 
 " => DelimitMate
 let delimitMate_expand_cr=1
