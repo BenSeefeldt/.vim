@@ -14,6 +14,7 @@ Bundle 'w0ng/vim-hybrid'
 " Bundle 'Lokaltog/vim-powerline'
 Bundle 'mhinz/vim-startify'
 " Bundle 'bling/vim-airline'
+Bundle 'itchyny/lightline.vim'
 
 " Syntax
 Bundle 'Raimondi/delimitMate'
@@ -193,6 +194,14 @@ set nosmd
 " let g:airline_powerline_fonts=1
 " let g:airline#extensions#tabline#enabled = 1
 
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
 " => DelimitMate
 let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
