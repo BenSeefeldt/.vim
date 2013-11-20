@@ -1,29 +1,30 @@
 " ==============================================================================
 "                                Vundle Options
 " ==============================================================================
+" Vundle settings.
+set term=$TERM
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
 " Required! 
 Bundle 'gmarik/vundle'
 
 " UI
-Bundle 'w0ng/vim-hybrid'
+" " Bundle 'w0ng/vim-hybrid'
 " Bundle 'Lokaltog/vim-powerline'
 Bundle 'mhinz/vim-startify'
 " Bundle 'bling/vim-airline'
 Bundle 'itchyny/lightline.vim'
 
 " Syntax
-Bundle 'Raimondi/delimitMate'
+" " Bundle 'Raimondi/delimitMate'
 
 " Files
-Bundle 'kien/ctrlp.vim'
+" " Bundle 'kien/ctrlp.vim'
 
 " Buffers
-Bundle 'troydm/easybuffer.vim'
+" " Bundle 'troydm/easybuffer.vim'
 
 " Text Manipulation
 Bundle 'godlygeek/tabular'
@@ -31,9 +32,9 @@ Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'tpope/vim-surround'
 
 " Note Taking
-Bundle 'xolox/vim-notes'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-shell'
+" " Bundle 'xolox/vim-notes'
+" " Bundle 'xolox/vim-misc'
+" " Bundle 'xolox/vim-shell'
 
 " Required by Vundle.
 filetype plugin indent on
@@ -44,6 +45,9 @@ filetype plugin indent on
 " ==============================================================================
 set exrc
 let mapleader = ","
+
+" Makes the backpace key work how you would expect.
+set backspace=2
 
 " Mouse always goes on
 set mouse=a
@@ -137,10 +141,10 @@ nmap <leader>j <C-w>10-
 nmap <leader>k <C-w>10+
 
 " System clipboard
-map <leader>p "+p
-map <leader>p "+P
-map <leader>y "+y
-map <leader>Y "+Y
+map <leader>p "*p
+map <leader>P "*P
+map <leader>y "*y
+map <leader>Y "*Y
 
 " EasyBuffer Invoke
 nmap <leader>v ;EasyBuffer<CR>
@@ -169,6 +173,8 @@ set guioptions+=LlRrb
 set guioptions-=LlRrb
 set go-=e "Uses non-gui tabs
 set ruler
+" GUI font setting for Mac
+set guifont=Menlo\ Regular:h13
 
 
 " ==============================================================================
@@ -176,47 +182,66 @@ set ruler
 " ==============================================================================
 set background=dark " Set background
 set t_Co=256 " Use 256 colors
-let g:hybrid_use_Xresources=1
-colorscheme hybrid " Load a colorscheme
+" let g:hybrid_use_Xresources=1
+colorscheme Tomorrow-Night " Load a colorscheme
+" highlight Pmenu ctermfg=4 ctermbg=0
+" highlight PmenuSel ctermfg=0 ctermbg=4
 
 " ==============================================================================
 "                                Plugin Settings
 " ==============================================================================
 "
 " 
-" => Powerline
-let g:Powerline_colorscheme = 'solarized256'
-let g:Powerline_symbols = 'fancy'
-" Turns off extre insert below
-set nosmd
-
-" => Airline
-" let g:airline_powerline_fonts=1
-" let g:airline#extensions#tabline#enabled = 1
-
+" " " => Powerline
+" " let g:Powerline_colorscheme = 'solarized256'
+" " let g:Powerline_symbols = 'fancy'
+" " " Turns off extre insert below
+" " set nosmd
+" " 
+" " " => Airline
+" " " let g:airline_powerline_fonts=1
+" " " let g:airline#extensions#tabline#enabled = 1
+" " 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+			\ 'colorscheme': 'wombat',
       \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}',
+      \   'readonly': '%{&readonly?"⁍":""}',
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
-" => DelimitMate
-let delimitMate_expand_cr=1
-let delimitMate_expand_space=1
-let delimitMate_balance_matchpairs=1
+" " " => DelimitMate
+" " let delimitMate_expand_cr=1
+" " let delimitMate_expand_space=1
+" " let delimitMate_balance_matchpairs=1
+" " 
+" " " => CtrlP
+" " " Set the working dir cor CtrlP to the current dir.
+" " let g:ctrlp_working_path_mode='c'
+" " 
+" " " => EasyBuffer
+" " " See Leader Key Mappings
+" " 
+" " " vim-notes
+" " let g:notes_ruler_text='————————————————————————————————————————————————————————————————————————————————'
+" " let g:notes_directories = ['~/notes']
+" " let g:notes_tab_indents = 0
+" " let g:notes_alt_indents = 0 
 
-" => CtrlP
-" Set the working dir cor CtrlP to the current dir.
-let g:ctrlp_working_path_mode='c'
+" noremap <ScrollWheelUp>     1<C-Y>
+" noremap <ScrollWheelDown>   1<C-E>
 
-" => EasyBuffer
-" See Leader Key Mappings
-
-" vim-notes
-let g:notes_ruler_text='————————————————————————————————————————————————————————————————————————————————'
-let g:notes_directories = ['~/notes']
-let g:notes_tab_indents = 0
-let g:notes_alt_indents = 0 
-
+" Vim copy for iTerm2
+if &term =~ "xterm.*"
+	let &t_ti = &t_ti . "\e[?2004h"
+	let &t_te = "\e[?2004l" . &t_te
+	function XTermPasteBegin(ret)
+		set pastetoggle=<Esc>[201~
+		set paste
+		return a:ret
+	endfunction
+	map <expr> <Esc>[200~ XTermPasteBegin("i")
+	imap <expr> <Esc>[200~ XTermPasteBegin("")
+	cmap <Esc>[200~ <nop>
+	cmap <Esc>[201~ <nop>
+endif
