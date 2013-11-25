@@ -7,7 +7,10 @@
 let s:foreground = "c5c8c6"
 let s:background = "1d1f21"
 let s:selection = "373b41"
+let s:ntsele = "575b61"
+let s:bselect = "979ba1"
 let s:line = "282a2e"
+let s:ccline = "383a3e"
 let s:comment = "969896"
 let s:red = "cc6666"
 let s:orange = "de935f"
@@ -23,6 +26,7 @@ if !has("gui_running")
 	let s:background = "303030"
 	let s:window = "5e5e5e"
 	let s:line = "3a3a3a"
+	let s:ccline = "4a4a4a"
 	let s:selection = "585858"
 end
 
@@ -243,8 +247,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
 	call <SID>X("LineNr", s:comment, "", "")
-	call <SID>X("NonText", s:selection, "", "")
-	call <SID>X("SpecialKey", s:selection, "", "")
+	call <SID>X("NonText", s:ntsele, "", "")
+	call <SID>X("SpecialKey", s:bselect, "", "")
 	call <SID>X("Search", s:background, s:yellow, "")
 	call <SID>X("TabLine", s:foreground, s:background, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
@@ -267,7 +271,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		call <SID>X("SignColumn", "", s:background, "none")
 	end
 	if version >= 703
-		call <SID>X("ColorColumn", "", s:line, "none")
+		call <SID>X("ColorColumn", "", s:ccline, "none")
 	end
 
 	" Standard Highlighting

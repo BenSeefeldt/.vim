@@ -11,10 +11,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " UI
-" " Bundle 'w0ng/vim-hybrid'
-" Bundle 'Lokaltog/vim-powerline'
 Bundle 'mhinz/vim-startify'
-" Bundle 'bling/vim-airline'
 Bundle 'itchyny/lightline.vim'
 
 " Syntax
@@ -30,6 +27,7 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'tpope/vim-surround'
+Bundle 'atweiden/vim-dragvisuals'
 
 " Note Taking
 " " Bundle 'xolox/vim-notes'
@@ -55,6 +53,10 @@ set mouse=a
 " Turn on line numbering
 set number
 set relativenumber
+
+" List chars for tab and trailing whitespace.
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
 
 " Turn off line wrapping
 set nowrap
@@ -88,14 +90,6 @@ set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*.exe,*.pyc,*.o,*.class
 
-" 'Smash' Escape
-imap jk <ESC>jk
-imap kj <ESC>jk
-
-" Allows you to not use shift.
-nnoremap ; :
-nnoremap : ;
-
 " Always shows statusline
 set ls=2
 
@@ -103,9 +97,8 @@ set ls=2
 set tabstop=2
 " >> and << do two columns.
 set shiftwidth=2
-" View whitespace
-" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-" set list
+" Expand tab into spaces.
+set expandtab
 
 " Show the begining of normal mode commands
 set sc
@@ -123,8 +116,8 @@ set completeopt=longest,menuone
 " Sets the default browser for the 'gx' command.
 let g:netrw_browsex_viewer = "chromium"
 
-" Sets auto text width and color column
-set tw=80
+" Sets color column
+" set tw=80
 set cc=81
 
 " ==============================================================================
@@ -146,13 +139,10 @@ map <leader>P "*P
 map <leader>y "*y
 map <leader>Y "*Y
 
-" EasyBuffer Invoke
-nmap <leader>v ;EasyBuffer<CR>
-
 " ==============================================================================
 "                               Mappings
 " ==============================================================================
-" Insert line at cursor.
+" Split line at cursor.
 nnoremap K i<CR><Esc>k$
 
 " Allows me to navigate quickly between windows
@@ -160,6 +150,29 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
+
+" Swap visual and block-visual.
+nnoremap    v   <C-V>
+nnoremap <C-V>     v
+
+vnoremap    v   <C-V>
+vnoremap <C-V>     v
+
+" 'Smash' Escape
+imap jk <ESC>jk
+imap kj <ESC>jk
+
+" Allows you to not use shift.
+nnoremap ; :
+nnoremap : ;
+
+" Awesome Visual mode drag features.
+vmap <expr> <LEFT> DVB_Drag('left')
+vmap <expr> <RIGHT> DVB_Drag('right')
+vmap <expr> <DOWN> DVB_Drag('down')
+vmap <expr> <UP> DVB_Drag('up')
+vmap <expr> D DVB_Duplicate()
+
 
 " ==============================================================================
 "                              GUI Options
@@ -171,6 +184,7 @@ set guioptions-=l
 set guioptions-=b
 set guioptions+=LlRrb
 set guioptions-=LlRrb
+set guicursor+=a:blinkon0
 set go-=e "Uses non-gui tabs
 set ruler
 " GUI font setting for Mac
@@ -182,7 +196,6 @@ set guifont=Menlo\ Regular:h13
 " ==============================================================================
 set background=dark " Set background
 set t_Co=256 " Use 256 colors
-" let g:hybrid_use_Xresources=1
 colorscheme Tomorrow-Night " Load a colorscheme
 " highlight Pmenu ctermfg=4 ctermbg=0
 " highlight PmenuSel ctermfg=0 ctermbg=4
@@ -191,19 +204,8 @@ colorscheme Tomorrow-Night " Load a colorscheme
 "                                Plugin Settings
 " ==============================================================================
 "
-" 
-" " " => Powerline
-" " let g:Powerline_colorscheme = 'solarized256'
-" " let g:Powerline_symbols = 'fancy'
-" " " Turns off extre insert below
-" " set nosmd
-" " 
-" " " => Airline
-" " " let g:airline_powerline_fonts=1
-" " " let g:airline#extensions#tabline#enabled = 1
-" " 
 let g:lightline = {
-			\ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'wombat',
       \ 'component': {
       \   'readonly': '%{&readonly?"⁍":""}',
       \ },
@@ -215,33 +217,27 @@ let g:lightline = {
 " " let delimitMate_expand_space=1
 " " let delimitMate_balance_matchpairs=1
 " " 
-" " " => CtrlP
-" " " Set the working dir cor CtrlP to the current dir.
-" " let g:ctrlp_working_path_mode='c'
-" " 
-" " " => EasyBuffer
-" " " See Leader Key Mappings
-" " 
 " " " vim-notes
 " " let g:notes_ruler_text='————————————————————————————————————————————————————————————————————————————————'
 " " let g:notes_directories = ['~/notes']
 " " let g:notes_tab_indents = 0
 " " let g:notes_alt_indents = 0 
 
-" noremap <ScrollWheelUp>     1<C-Y>
-" noremap <ScrollWheelDown>   1<C-E>
+" ==============================================================================
+"                             OS Specific Mappings
+" ==============================================================================
 
 " Vim copy for iTerm2
 if &term =~ "xterm.*"
-	let &t_ti = &t_ti . "\e[?2004h"
-	let &t_te = "\e[?2004l" . &t_te
-	function XTermPasteBegin(ret)
-		set pastetoggle=<Esc>[201~
-		set paste
-		return a:ret
-	endfunction
-	map <expr> <Esc>[200~ XTermPasteBegin("i")
-	imap <expr> <Esc>[200~ XTermPasteBegin("")
-	cmap <Esc>[200~ <nop>
-	cmap <Esc>[201~ <nop>
+  let &t_ti = &t_ti . "\e[?2004h"
+  let &t_te = "\e[?2004l" . &t_te
+  function XTermPasteBegin(ret)
+    set pastetoggle=<Esc>[201~
+    set paste
+    return a:ret
+  endfunction
+  map <expr> <Esc>[200~ XTermPasteBegin("i")
+  imap <expr> <Esc>[200~ XTermPasteBegin("")
+  cmap <Esc>[200~ <nop>
+  cmap <Esc>[201~ <nop>
 endif
