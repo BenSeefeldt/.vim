@@ -8,6 +8,7 @@ let s:foreground = "c5c8c6"
 let s:background = "1d1f21"
 let s:selection = "373b41"
 let s:ntsele = "575b61"
+let s:ptsele = "777b81"
 let s:bselect = "979ba1"
 let s:line = "282a2e"
 let s:ccline = "383a3e"
@@ -254,13 +255,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
-	call <SID>X("Visual", "", s:selection, "")
+	call <SID>X("Visual", "", s:ntsele, "")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
-	call <SID>X("MatchParen", "", s:selection, "")
+	call <SID>X("MatchParen", "", s:ptsele, "")
 	call <SID>X("Folded", s:comment, s:background, "")
 	call <SID>X("FoldColumn", "", s:background, "")
 	if version >= 700

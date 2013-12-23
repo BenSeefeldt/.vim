@@ -97,6 +97,7 @@ set ls=2
 set tabstop=2
 " >> and << do two columns.
 set shiftwidth=2
+set softtabstop=2
 " Expand tab into spaces.
 set expandtab
 
@@ -159,8 +160,8 @@ vnoremap    v   <C-V>
 vnoremap <C-V>     v
 
 " 'Smash' Escape
-imap jk <ESC>jk
-imap kj <ESC>jk
+" imap jk <ESC>jk
+" imap kj <ESC>jk
 
 " Allows you to not use shift.
 nnoremap ; :
