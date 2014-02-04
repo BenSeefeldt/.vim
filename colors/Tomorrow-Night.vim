@@ -349,6 +349,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("htmlTagName", s:red, "", "")
 	call <SID>X("htmlArg", s:red, "", "")
 	call <SID>X("htmlScriptTag", s:red, "", "")
+	call <SID>X("htmlH1", s:blue, "", "bold")
+	call <SID>X("htmlH2", s:green, "", "bold")
+	call <SID>X("htmlH3", s:yellow, "", "bold")
+	call <SID>X("htmlH4", s:purple, "", "bold")
+	call <SID>X("htmlH5", s:orange, "", "bold")
 
 	" Diff Highlighting
   let s:diffbackground = "494e56"

@@ -31,8 +31,12 @@ Bundle 'atweiden/vim-dragvisuals'
 
 " Note Taking
 " " Bundle 'xolox/vim-notes'
-" " Bundle 'xolox/vim-misc'
-" " Bundle 'xolox/vim-shell'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-shell'
+
+" Python autocomplete
+" Bundle 'davidhalter/jedi-vim'
+" Bundle 'Valloric/YouCompleteMe'
 
 " Required by Vundle.
 filetype plugin indent on
@@ -115,11 +119,15 @@ set completeopt=longest,menuone
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Sets the default browser for the 'gx' command.
-let g:netrw_browsex_viewer = "chromium"
+" let g:netrw_browsex_viewer = "open"
+nmap gx ;Open<CR>
 
 " Sets color column
 " set tw=80
 set cc=81
+
+" Correctly sets filetype for the markdown filetype
+au BufRead,BufNewFile *.md set filetype=markdown
 
 " ==============================================================================
 "                              Leader Keys
@@ -223,6 +231,8 @@ let g:lightline = {
 " " let g:notes_directories = ['~/notes']
 " " let g:notes_tab_indents = 0
 " " let g:notes_alt_indents = 0 
+
+" let g:clang_user_options"|| exit 0'
 
 " ==============================================================================
 "                             OS Specific Mappings
