@@ -15,10 +15,10 @@ Bundle 'mhinz/vim-startify'
 Bundle 'itchyny/lightline.vim'
 
 " Syntax
-" " Bundle 'Raimondi/delimitMate'
+Bundle 'Raimondi/delimitMate'
 
 " Files
-" " Bundle 'kien/ctrlp.vim'
+" Bundle 'kien/ctrlp.vim'
 
 " Buffers
 " " Bundle 'troydm/easybuffer.vim'
@@ -222,9 +222,9 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 " " " => DelimitMate
-" " let delimitMate_expand_cr=1
-" " let delimitMate_expand_space=1
-" " let delimitMate_balance_matchpairs=1
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
+let delimitMate_balance_matchpairs=1
 " " 
 " " " vim-notes
 " " let g:notes_ruler_text='————————————————————————————————————————————————————————————————————————————————'
