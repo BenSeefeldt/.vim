@@ -20,6 +20,9 @@ Bundle 'Raimondi/delimitMate'
 " Files
 " Bundle 'kien/ctrlp.vim'
 
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+
 " Buffers
 " " Bundle 'troydm/easybuffer.vim'
 
@@ -38,6 +41,13 @@ Bundle 'xolox/vim-shell'
 " Bundle 'davidhalter/jedi-vim'
 " Bundle 'Valloric/YouCompleteMe'
 
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'kchmck/vim-coffee-script'
+
+" For Dash to work
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
 " Required by Vundle.
 filetype plugin indent on
 
@@ -46,7 +56,7 @@ filetype plugin indent on
 "                           Various Settings
 " ==============================================================================
 set exrc
-let mapleader = ","
+let mapleader = "\<space>"
 
 " Makes the backpace key work how you would expect.
 set backspace=2
@@ -74,7 +84,7 @@ set nofoldenable
 set fml=0
 
 " Copies indent level from previous line
-set autoindent
+" set autoindent
 
 
 " Turn on syntax highlighting
@@ -86,6 +96,7 @@ set shortmess=I
 " Highlight search terms and clear
 set hlsearch
 set ignorecase
+set is
 
 " Auto complete stuff. To come.
 
@@ -137,17 +148,22 @@ map <leader>/ ;nohl<CR><ESC>
 nmap <leader>n ;bnext <CR>
 nmap <leader>b ;bprevious <CR>
 
-nmap <leader>h <C-w>10>
-nmap <leader>l <C-w>10<
-nmap <leader>j <C-w>10-
-nmap <leader>k <C-w>10+
+" nmap <leader>h <C-w>10>
+" nmap <leader>l <C-w>10<
+" nmap <leader>j <C-w>10-
+" nmap <leader>k <C-w>10+
 
 " System clipboard
-map <leader>p "*p
-map <leader>P "*P
-map <leader>y "*y
-map <leader>Y "*Y
+" map <leader>p "*p
+" map <leader>P "*P
+" map <leader>y "*y
+" map <leader>Y "*Y
 
+"nnoremap <leader>/ :Unite -auto-preview grep:.<cr>
+nnoremap <leader>y :Unite history/yank<cr>
+nnoremap <leader>s :Unite -quick-match buffer<cr>
+nnoremap <leader>d :Dash<cr>
+nmap <silent> <leader>d <Plug>DashSearch
 " ==============================================================================
 "                               Mappings
 " ==============================================================================
@@ -168,8 +184,10 @@ vnoremap    v   <C-V>
 vnoremap <C-V>     v
 
 " 'Smash' Escape
-" imap jk <ESC>jk
-" imap kj <ESC>jk
+imap jk <ESC>jk
+imap kj <ESC>jk
+
+imap <Del> <ESC>jk
 
 " Allows you to not use shift.
 nnoremap ; :
@@ -234,6 +252,15 @@ let delimitMate_balance_matchpairs=1
 
 " let g:clang_user_options"|| exit 0'
 
+nnoremap <C-p> :Unite -start-insert file_rec/async<cr>
+let g:unite_source_history_yank_enable = 1
+
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+
 " ==============================================================================
 "                             OS Specific Mappings
 " ==============================================================================
@@ -252,3 +279,10 @@ if &term =~ "xterm.*"
   cmap <Esc>[200~ <nop>
   cmap <Esc>[201~ <nop>
 endif
+
+" Stuff for go syntax
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
